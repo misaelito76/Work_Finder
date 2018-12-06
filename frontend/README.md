@@ -1,14 +1,28 @@
+#General
+built on Node js back end with a Mongo DB data base and Angular 6.
+Simple job-search app where users can check on a joblist displayed from the home page. Once register and logged in, users are able to create and post jobs whith the usual characteristics. The feature of creating a Resume is available only for the current user's session.
+
+#create a new Mongo DB 
+
+connection name:JobsList adress:localhost:27017 
+
+#Run the app
+
+ Once you clon/download this repository you need to run two different terminals.
+
+#cd misael/frontend
+ng serve + ENTER
+
+# next terminal 
+
+#cd misael/backend
+
+npm run dev + ENTER.
+
+
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -25,3 +39,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+##Proyect by
+
+Misael Jimenez
