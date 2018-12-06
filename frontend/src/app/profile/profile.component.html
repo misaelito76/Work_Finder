@@ -1,0 +1,121 @@
+<div class="container" id="container">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top ">
+        <div>
+            <img src="assets/img/p.jpg" class="rounded-circle" style=" width:10% " /> Resume Builder</div>
+        <button class="navbar-toggler btn-danger" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon  "></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class=" navbar-default center-align">
+                <li class="nav-divider">
+                    <a style="color:aliceblue" routerLink="/"></a>
+                </li>
+                <li class="nav-link">
+                    <a style="color:aliceblue" RouterLinkActive="active current " routerLink="/Home">Home</a>
+                </li>
+                <li class="nav-divider">
+                    <a style="color:aliceblue" routerLink="/"></a>
+                </li>
+
+                <li class="nav-divider">
+                    <a style="color:aliceblue" routerLink="/"></a>
+                </li>
+                <li class="nav-link">
+                    <a style="color:aliceblue" RouterLinkActive="active current" routerLink="/JobsList">Jobs </a>
+                </li>
+                <li class="nav-link">
+                    <a style="color:aliceblue" RouterLinkActive="active current" routerLink="/CreateJobs">Create a Job </a>
+                </li>
+                <li class="nav-link">
+                    <a style="color:aliceblue" RouterLinkActive="active current" routerLink="/Resume">My Resume </a>
+                </li>
+                <li class="nav-link">
+                    <a style="color:aliceblue" RouterLinkActive="active current" (click)="logout()" routerLink="/"> log-out</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+    <div class="text-white">
+
+        <h5><b>Welcome</b></h5>
+        <h6><i class="fas fa-user-circle"></i> {{authService.selectedUsers.UserName | uppercase }}</h6> {{today|date}}<br>{{today | date:'shortTime'}}
+    </div>
+
+    <div class="sm-jumbotron-a center-align" id="container">
+        <div>
+            <img src="assets/img/p.jpg" class="rounded-circle" style=" width:10% " />
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <form id="card-body" name="Resume" #profileListForm="ngForm" (ngSubmit)="addUser(profileListForm)" class="col s6 white">
+                    <br><br>
+                    <h6 class="display-4"><i class="fas a-hammer"></i> <b>Resume builder</b></h6>
+                    <br>
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="input-field col sm">
+                                <h6><i class="fas fa-brain"></i> <b> Main Skills :</b></h6>
+                                <input name='MainSkills' #MainSkills="ngModel" [(ngModel)]="authService.selectedUsers.MainSkills" class="form-control" type="text">
+
+                            </div>
+
+                            <div class="input-field col sm">
+                                <h6><i class="fas fa-graduation-cap"></i> <b> Education:</b></h6>
+                                <input name='Education' #Education="ngModel" class="form-control" type="Text" [(ngModel)]="authService.selectedUsers.Education">
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="input-field col sm">
+                            <h6><i class="fas fa-hammer"></i> <b> Work Experience :</b></h6><br>
+                            <textarea rows="2" cols="4" name='WorkExperience' #WorkExperience="ngModel" class="form-control" type="string" [(ngModel)]="authService.selectedUsers.WorkExperience"></textarea>
+
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+                    <br><br> <br>
+
+                    <div class="row ">
+                        <div class="input-field col s12 ">
+                            <button class="btn btn-large btn-submit " type="submit">
+                                 <h5><i class="fas fa-pencil-alt"></i>Create/Update</h5>
+                              </button>
+                        </div>
+                        <div class="input-field col s12 ">
+                            <button class="btn btn-large btn-submit " type="submit" (click)="resetForm(profileListForm)">
+                                
+                                 <h5><i class="fas fa-broom"></i>Delete Form</h5>
+                              </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="row">
+                <div class="col sm12">
+                    <div class="card-footer" style="color:aliceblue">
+                        <h6 class="left-align"><b>Notes:</b><br><br>
+                            <b>auth details:</b> only include last 4 positions<br>explain gaps</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+</div>

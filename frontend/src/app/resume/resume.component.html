@@ -1,0 +1,97 @@
+<div class="container" id="container">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top ">
+        <div>
+            <img src="assets/img/p.jpg" class="rounded-circle" style=" width:10% " /> My resume </div>
+        <button class="navbar-toggler btn-danger" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon  "></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class=" navbar-default center-align">
+                <li class="nav-divider">
+                    <a style="color:aliceblue" routerLink="/"></a>
+                </li>
+                <li class="nav-link">
+                    <a style="color:aliceblue" RouterLinkActive="active current " routerLink="/Home">Home</a>
+                </li>
+                <li class="nav-divider">
+                    <a style="color:aliceblue" routerLink="/"></a>
+                </li>
+
+                <li class="nav-divider">
+                    <a style="color:aliceblue" routerLink="/"></a>
+                </li>
+                <li class="nav-link">
+                    <a style="color:aliceblue" RouterLinkActive="active current" routerLink="/JobsList">Jobs </a>
+                </li>
+                <li class="nav-link">
+                    <a style="color:aliceblue" RouterLinkActive="active current" routerLink="/CreateJobs">Create a Job </a>
+                </li>
+                <li class="nav-link">
+                    <a style="color:aliceblue" RouterLinkActive="active current" routerLink="/Profile">Create Resume </a>
+                </li>
+
+                <li class="nav-link">
+                    <a style="color:aliceblue" RouterLinkActive="active current" (click)="logout()" routerLink="/"> log-out</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+    <div class="text-white">
+
+        <h5><b>Welcome to </b></h5>
+        <h6><i class="fas fa-user-circle"></i> {{authService.selectedUsers.UserName|uppercase}}'S Resume</h6>
+    </div>
+
+    <div class="sm-jumbotron-a center-align" id="container">
+        <div>
+            <img src="assets/img/p.jpg" class="rounded-circle" style=" width:10% " />
+        </div>
+        <div class="card-body">
+
+            <div id="c">
+
+                <div class="center-align display-4 ">
+                    <h1>Education</h1>
+                    <h4><b>{{authService.selectedUsers.Education}}</b></h4>
+                </div>
+
+                <div class="center-align display-4 ">
+
+
+
+                    <h1>Main Skills</h1>
+
+
+
+                    <b>{{authService.selectedUsers.MainSkills}}</b>
+
+                </div>
+
+
+                <div class="center-align ">
+
+                    <h1>Work Experience</h1>
+                    <b>{{authService.selectedUsers.WorkExperience}}</b>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col sm12">
+            <div class="card-footer" style="color:aliceblue">
+                <h6 class="left-align"><b>Notes:</b><br><br>
+                    <b>Resume details:</b> only include last 4 positions<br>explain gaps</h6>
+            </div>
+        </div>
+    </div>

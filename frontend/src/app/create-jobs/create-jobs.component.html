@@ -1,0 +1,143 @@
+<div class="container" id="container">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top ">
+        <div>
+            <img src="assets/img/p.jpg" class="rounded-circle" style=" width:10% " /> Post Jobs</div>
+        <button class="navbar-toggler btn-danger" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon  "></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class=" navbar-default center-align">
+                <li class="nav-divider">
+                    <a style="color:aliceblue" routerLink="/"></a>
+                </li>
+                <li class="nav-link">
+                    <a style="color:aliceblue" RouterLinkActive="active current " routerLink="/Home">Home</a>
+                </li>
+                <li class="nav-divider">
+                    <a style="color:aliceblue" routerLink="/"></a>
+                </li>
+
+                <li class="nav-divider">
+                    <a style="color:aliceblue" routerLink="/"></a>
+                </li>
+                <li class="nav-link">
+                    <a style="color:aliceblue" RouterLinkActive="active current" routerLink="/JobsList">Jobs </a>
+                </li>
+
+                <li class="nav-link">
+                    <a style="color:aliceblue" RouterLinkActive="active current" (click)="logout()" routerLink="/"> log-out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br><br>
+    <div id="a" class="card">
+        <div class="sm-jumbotron-a center-align" id="container">
+            <br> <br> <br> <br>
+            <div>
+                <img src="assets/img/p.jpg" class="rounded-circle" style=" width:10% " />
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <form id="card-body" #jobsListForm="ngForm" (ngSubmit)="addJob (jobsListForm)" class="col s6 white">
+                        <br><br>
+                        <h6 class="display-4"><i class="fas a-hammer"></i> <b>Create a Job</b></h6>
+                        <br>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="input-field col s2">
+                                    <h6><i class="fas fa-archway"></i> <b> Title :</b></h6>
+                                    <input required minlength="4" name='Title' #Title="ngModel" [(ngModel)]="jobsService.selectedJobs.Title" class="form-control" type="text">
+                                    <div class="alert alert-danger" *ngIf="Title.touched && !Title.valid">Title is required at least 4 characters</div>
+                                </div>
+
+                                <div class="input-field col s2">
+                                    <h6><i class="fas fa-hand-holding-usd"></i> <b> Salary/hr :</b></h6>
+                                    <input required minlength="4" name='Salary' #Salary="ngModel" class="form-control" type="Text" [(ngModel)]="jobsService.selectedJobs.Salary">
+                                    <div class="alert alert-danger" *ngIf="Salary.touched && !Salary.valid">Salary is required at least 4 characters</div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="input-field col s2">
+                                    <h6><i class="fas fa-hammer"></i> <b> Job Description :</b></h6><br>
+                                    <textarea required minlength="4" rows="2" cols="4" name='Description' #Description="ngModel" class="form-control" type="string" [(ngModel)]="jobsService.selectedJobs.Description"></textarea>
+                                    <div class="alert alert-danger" *ngIf="Description.touched && !Description.valid">Description is required at least 4 characters</div>
+                                </div>
+
+
+                                <div class="input-field col s2">
+                                    <h6><i class="fas fa-building"></i> <b> Company Description :</b></h6><br>
+                                    <textarea required minlength="4" rows="2" cols="4" name='CompanyDescription' #CompanyDescription="ngModel" class="form-control" type="string" [(ngModel)]="jobsService.selectedJobs.CompanyDescription"></textarea>
+                                    <div class="alert alert-danger" *ngIf="CompanyDescription.touched && !CompanyDescription.valid">Company Description is required at least 4 characters</div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+
+                                <div class="input-field col s2">
+                                    <h6><i class="fas fa-fist-raised"></i> <b> Required skills :</b></h6>
+                                    <input required minlength="4" name='RequiredSkills' #RequiredSkills="ngModel" class="form-control" type="text" [(ngModel)]="jobsService.selectedJobs.RequiredSkills">
+                                    <div class="alert alert-danger" *ngIf="RequiredSkills.touched && !RequiredSkills.valid">Required Skills is required at least 4 characters</div>
+                                </div>
+
+                                <div class="input-field col s2">
+                                    <h6><i class="fas fa-dice-d6"></i> <b>  Company Name :</b></h6>
+                                    <input required minlength="4" name='CompanyName' #CompanyName="ngModel" class="form-control" type="text" [(ngModel)]="jobsService.selectedJobs.CompanyName">
+                                    <div class="alert alert-danger" *ngIf="CompanyName.touched && !CompanyName.valid">The name of the company is required at least 4 characters</div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="input-field col s2">
+                                    <h6><i class="fas fa-city"></i> <b> City :</b></h6>
+                                    <input required minlength="1" name='City' #City="ngModel" class="form-control" type="text" [(ngModel)]="jobsService.selectedJobs.City">
+                                    <div class="alert alert-danger" *ngIf="City.touched && !City.valid">City is required at least 4 characters</div>
+                                </div>
+
+                                <div class="input-field col s2">
+                                    <h6><i class="fas fa-book-open"></i> <b> Type :</b></h6>
+                                    <input required minlength="4" name='Type' #Type="ngModel" class="form-control" type="text" [(ngModel)]="jobsService.selectedJobs.Type">
+                                    <div class="alert alert-danger" *ngIf="Type.touched && !Type.valid">Type is required at least 4 characters</div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="input-field col s2">
+                                    <h6><i class="fas fa-calendar-alt" aria-hidden="true"></i> <b> Creation Date :</b></h6><br>
+                                    <input required minlength="4" name='CreationDate' #CreationDate="ngModel" class="form-control center-align" type="date" [(ngModel)]="jobsService.selectedJobs.CreationDate">
+                                    <div class="alert alert-danger" *ngIf="CreationDate.touched && !CreationDate.valid">Creation Date is required at least 4 characters</div>
+                                </div>
+
+                                <div class="input-field col s2">
+                                    <h6><i class="far fa-calendar-alt" aria-hidden="true"></i><b> Ending Date :</b></h6><br>
+                                    <input required minlength="4" name="EndingDate" #EndingDate="ngModel" class="form-control center-align" type="date" [(ngModel)]="jobsService.selectedJobs.EndingDate">
+                                    <div class="alert alert-danger" *ngIf="EndingDate.touched && !EndingDate.valid">Ending Date is required at least 4 characters</div>
+                                </div>
+
+                            </div>
+                            <br><br> <br>
+                        </div>
+                        <div class="row ">
+                            <div class="input-field col s12 ">
+                                <button class="btn btn-large btn-submit " type="submit" [disabled]="!jobsListForm.valid">
+                                   <h5>Create</h5>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="row">
+                    <div class="col sm12">
+                        <div class="card-footer" style="color:aliceblue">
+                            <h6 class="left-align"><b>Notes:</b><br><br>
+                                <b>Type:</b> Refers to (Permanent, Contract, Internship or Freelance)</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>

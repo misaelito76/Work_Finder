@@ -1,0 +1,127 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div>
+            <img src="assets/img/p.jpg" class="rounded-circle" style=" width:10% " /> JOB-LIST</div>
+        <button class="navbar-toggler btn-danger" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon  "></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class=" navbar-default center-align ">
+                <li class="nav-link">
+                    <a style="color:aliceblue" RouterlinkActive="active current" routerLink="/Home">Home</a>
+                </li>
+
+                <li class="nav-link">
+                    <a *ngIf="isAuthenticated()==0" style="color:aliceblue" RouterlinkActive="active current" routerLink="/login">Login</a>
+                </li>
+
+                <li class="nav-link">
+                    <a *ngIf="isAuthenticated()==0" style="color:aliceblue" RouterlinkActive="active current" routerLink="/SignUp">Register</a>
+                </li>
+
+
+
+            </ul>
+        </div>
+    </nav>
+    <br><br><br><br>
+    <div class="center-align">
+        <img src="assets/img/p.jpg" class="rounded-circle" style=" width:10% " /><br><br>
+        <div class="card" id="a">
+            <div class=" table-active table table-responsive-lg  center-align  ">
+                <div id="a" class="center-align ">
+                    <tbody id="c" class="table table-responsive table-bordered  " *ngFor="let job of jobsService.jobs ">
+                        <div class="center-align display-4 ">
+
+                            <b><u>Company name</u></b></div><br>
+                        <h4><b>{{job.CompanyName}}</b></h4>
+
+                        <div class="center-align">
+                            <div id="d" class="dropdown-divider"></div><br>
+                            <tr>
+                                <td class="center-align ">
+                                    <h6><i class="fas fa-calendar-alt"></i>
+                                        <div class="dropdown-divider"></div>
+                                        <b>Creation date:</b></h6><br>
+                                    <div class="dropdown-divider"></div>
+                                    <b>{{job.CreationDate}}</b></td>
+
+                                <td class="center-align ">
+                                    <h6 class=""><i class="fas fa-archway"></i>
+                                        <div class="dropdown-divider"></div>
+                                        <b>Job's Title:</b></h6><br>
+                                    <div class="dropdown-divider"></div>
+                                    <p class="centered"><b>{{job.Title}}</b></p>
+                                </td>
+                                <td class="center-align ">
+                                    <h6><i class="fas fa-city"></i>
+                                        <div class="dropdown-divider"></div>
+                                        <b>Job's City:</b></h6><br>
+                                    <div class="dropdown-divider"></div>
+                                    <b>{{job.City}}</b></td>
+
+                                <td class="center-align ">
+                                    <h6><i class="fas fa-fist-raised"></i>
+                                        <div class="dropdown-divider"></div>
+                                        <b>Required skills:</b></h6><br>
+                                    <div class="dropdown-divider"></div>
+                                    <b>{{job.RequiredSkills}}</b></td>
+
+                                <td class="center-align ">
+                                    <h6><i class="fas fa-hand-holding-usd"></i>
+                                        <div class="dropdown-divider"></div>
+                                        <b> Salary/Hr:</b></h6><br>
+                                    <div class="dropdown-divider"></div>
+                                    <b>{{job.Salary}}</b></td>
+
+                                <td class="center-align ">
+                                    <h6><i class="fas fa-book-open"></i>
+                                        <div class="dropdown-divider"></div>
+                                        <b>Job's type:</b></h6><br>
+                                    <div class="dropdown-divider"></div>
+                                    <b>{{job.Type}}</b></td>
+
+                                <td class="center-align ">
+                                    <h6><i class="far fa-calendar-alt"></i>
+                                        <div class="dropdown-divider"></div>
+                                        <b>Ending date:</b></h6><br>
+                                    <div class="dropdown-divider"></div>
+                                    <b>{{job.EndingDate}}</b></td>
+                            </tr>
+                        </div>
+                        <br><br>
+
+                        <div id="c" class="row">
+                            <div class="col sm6">
+                                <div>
+                                    <td class="center-align ">
+                                        <h6><i class="fas fa-building"></i>
+                                            <div class="dropdown-divider"></div>
+                                            <b>Company <br>description:</b></h6><br>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="card center-align">
+                                            <b>{{job.CompanyDescription}}</b></div>
+                                    </td>
+                                </div>
+                            </div>
+                            <div class="col sm6">
+                                <td class="center-align ">
+                                    <h6><i class="fas fa-hammer"></i>
+                                        <div class="dropdown-divider"></div>
+                                        <b>Job's <br>Description:</b></h6><br>
+                                    <div class="dropdown-divider"></div>
+                                    <div class="card center-align">
+                                        <b>{{job.Description}}</b></div>
+                                </td>
+                            </div>
+                        </div>
+                        <div class="card-footer" style="color:aliceblue">
+                            <h6 class="left-align"><b>Notes:</b><br><br>
+                                <b>Type:</b> Refers to (Permanent, Contract, Internship or Freelance)</h6>
+                        </div>
+                    </tbody>
+                </div>
+            </div>
+        </div>
+    </div>

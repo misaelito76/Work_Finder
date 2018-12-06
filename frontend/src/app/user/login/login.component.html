@@ -1,0 +1,106 @@
+<div class="container" id="container">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top ">
+        <div>
+            <img src="assets/img/p.jpg" class="rounded-circle" style=" width:10% " /> Sign-in</div>
+        <button class="navbar-toggler btn-danger" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon  "></span>
+                              </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class=" navbar-default center-align">
+                <li class="nav-divider">
+                    <a style="color:aliceblue" routerLink="/"></a>
+                </li>
+
+
+
+
+
+
+
+
+                <li class="nav-link">
+                    <a style="color:aliceblue" RouterLinkActive="active current" routerLink="/Home">Home </a>
+                </li>
+                <li class="nav-link">
+                    <a style="color:aliceblue" RouterLinkActive="active current" routerLink="/SignUp">Sign-up </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+    </nav>
+
+    <br><br>
+    <div class="center-align">
+        <img src="assets/img/p.jpg" class="rounded-circle center-align" style=" width:10% " />
+    </div> <br> <br> <br> <br>
+
+
+    <div id="a" class="card">
+
+        <div class="sm-jumbotron-a center-align" id="container">
+            <br>
+            <div class="display-4 text-white">
+                Sign-in
+            </div>
+            <br> <br> <br>
+
+            <div class="card-body">
+
+
+                <div class="row">
+                    <div class="col sm6 ">
+                        <div id="a" class="card">
+                            <div class="sm-jumbotron center-align">
+                                <form id="card-body" #loginForm="ngForm" (ngSubmit)="LoginUser (loginForm)" class="col sm12 white">
+                                    <br><br>
+                                    <div class="row">
+
+
+                                        <div class=" col sm6">
+                                            <h6><i class="fas fa-user"></i> <b> User Name :</b></h6>
+
+                                            <input id="username" name="username" class="form-control" type="text" ngModel>
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <div class=" col sm6">
+                                        <h6><b><i class="fas fa-unlock-alt"></i>  Password :</b>
+                                        </h6>
+
+                                        <input id="password" name="password" class="form-control" type="password" ngModel>
+                                        <div class="row ">
+                                            <div class="input-field col sm12 center-align ">
+                                                <button class="btn-large btn-submit bg-success " [disabled]="!loginForm.valid" type="submit">Login</button>
+                                                <div>loading...</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+
+
+
+
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>

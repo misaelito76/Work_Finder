@@ -1,0 +1,96 @@
+<div class="container" id="container">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top ">
+        <div>
+            <img src="assets/img/p.jpg" class="rounded-circle" style=" width:10% " /> Post Jobs</div>
+        <button class="navbar-toggler btn-danger" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon  "></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class=" navbar-default center-align">
+                <li class="nav-divider">
+                    <a style="color:aliceblue" routerLink="/"></a>
+                </li>
+                <li class="nav-link">
+                    <a style="color:aliceblue" RouterLinkActive="active current " routerLink="/Home">Home</a>
+                </li>
+                <li class="nav-divider">
+                    <a style="color:aliceblue" routerLink="/"></a>
+                </li>
+                <li class="nav-link">
+                    <a style="color:aliceblue" RouterLinkActive="active current" routerLink="/login">Login</a>
+                </li>
+                <li class="nav-divider">
+                    <a style="color:aliceblue" routerLink="/"></a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <br><br>
+    <div id="a" class="card">
+        <div class="sm-jumbotron-a center-align" id="container">
+            <br> <br> <br> <br>
+            <div>
+                <img src="assets/img/p.jpg" class="rounded-circle" style=" width:10% " />
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <form id="card-body" #usersListForm="ngForm" (ngSubmit)="addUser (usersListForm)" class="col s6 white">
+                        <br><br>
+                        <h6 class="display-4"> <b>Register</b></h6>
+                        <br>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="input-field col s2">
+                                    <h6><i class="fas fa-user"></i> <b> UserName :</b></h6>
+                                    <input required minlength="1" name='UserName' #UserName="ngModel" [(ngModel)]="authService.selectedUsers.UserName" class="form-control" type="text">
+                                    <div class="alert alert-danger" *ngIf="UserName.touched && !UserName.valid">User name is required</div>
+                                </div>
+
+                                <div class="input-field col s2">
+                                    <h6><i class="fas fa-unlock-alt"></i> <b> Password:</b></h6>
+                                    <input required minlength="6" name='Password' #Password="ngModel" class="form-control" type="Password" [(ngModel)]="authService.selectedUsers.Password">
+                                    <div class="alert alert-danger" *ngIf="Password.touched && !Password.valid">
+                                        <div *ngIf="Password.errors.required">Password is required</div>
+                                        <div *ngIf="Password.errors.minlength">Type at least 6 characters</div>
+
+                                    </div>
+
+
+
+
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s2">
+                                    <h6><i class="fas fa-address-card"></i> <b> Full Name :</b></h6>
+                                    <input required minlength="1" name='FullName' #FullName="ngModel" [(ngModel)]="authService.selectedUsers.FullName" class="form-control" type="text">
+                                    <div class="alert alert-danger" *ngIf="FullName.touched && !FullName.valid"> Full name is required</div>
+                                </div>
+
+                                <div class="input-field col s2">
+                                    <h6><i class="fas fa-envelope"></i> <b> Email:</b></h6>
+                                    <input required minlength="1" name='Email' #Email="ngModel" class="form-control" type="Text" [(ngModel)]="authService.selectedUsers.Email">
+                                    <div class="alert alert-danger" *ngIf="Email.touched && !Email.valid">Email is required</div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+
+
+
+                                <div class="input-field col s12 ">
+                                    <button class="btn btn-large btn-submit " type="submit" [disabled]="!usersListForm.valid">
+                                       <h5>Send</h5>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
