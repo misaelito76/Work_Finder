@@ -1,4 +1,7 @@
 #General
+School Project: Work Finder
+name: Misael Jimenez
+
 built on Node js back end with a Mongo DB data base and Angular 6.
 Simple job-search app where users can check on a joblist displayed from the home page. Once register and logged in, users are able to create and post jobs whith the usual characteristics. The feature of creating a Resume is available only for the current user's session.
 
